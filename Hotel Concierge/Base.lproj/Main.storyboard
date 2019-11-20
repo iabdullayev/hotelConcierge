@@ -62,12 +62,64 @@
                                     <constraint firstItem="0q6-tZ-27l" firstAttribute="leading" secondItem="igD-wB-oHc" secondAttribute="leading" constant="12" id="yq7-BL-m4o"/>
                                 </constraints>
                             </view>
+                            <stackView opaque="NO" contentMode="scaleAspectFill" axis="vertical" distribution="equalSpacing" alignment="center" spacing="30" translatesAutoresizingMaskIntoConstraints="NO" id="omX-56-pfD">
+                                <rect key="frame" x="32" y="210" width="311" height="285"/>
+                                <subviews>
+                                    <button opaque="NO" contentMode="scaleToFill" verticalCompressionResistancePriority="749" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="pmc-67-Yyd">
+                                        <rect key="frame" x="0.0" y="0.0" width="311" height="75"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="75" id="xSR-Wq-Cua"/>
+                                        </constraints>
+                                        <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="25"/>
+                                        <state key="normal" title="Room Service" backgroundImage="Bg">
+                                            <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                            <preferredSymbolConfiguration key="preferredSymbolConfiguration" scale="medium" weight="bold"/>
+                                        </state>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="GzM-70-ACL">
+                                        <rect key="frame" x="0.0" y="105" width="311" height="75"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="75" id="zNg-CY-JKw"/>
+                                        </constraints>
+                                        <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="25"/>
+                                        <state key="normal" title="HouseKeeping" backgroundImage="Bg">
+                                            <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                            <preferredSymbolConfiguration key="preferredSymbolConfiguration" scale="medium" weight="bold"/>
+                                        </state>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="jlv-S5-d0K">
+                                        <rect key="frame" x="0.0" y="210" width="311" height="75"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="75" id="u30-cs-oSb"/>
+                                        </constraints>
+                                        <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="25"/>
+                                        <state key="normal" title="Request Taxi" backgroundImage="Bg">
+                                            <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                            <preferredSymbolConfiguration key="preferredSymbolConfiguration" scale="medium" weight="bold"/>
+                                        </state>
+                                    </button>
+                                </subviews>
+                                <color key="tintColor" cocoaTouchSystemColor="lightTextColor"/>
+                            </stackView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Choose Service" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="UbH-KR-fLa">
+                                <rect key="frame" x="102.5" y="137" width="170" height="30"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="25"/>
+                                <color key="textColor" red="0.97647058819999999" green="0.38823529410000002" blue="0.1960784314" alpha="1" colorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                         <constraints>
+                            <constraint firstItem="UbH-KR-fLa" firstAttribute="centerX" secondItem="3Wo-sY-t7a" secondAttribute="centerX" id="0gr-AQ-fqc"/>
+                            <constraint firstItem="UbH-KR-fLa" firstAttribute="top" secondItem="igD-wB-oHc" secondAttribute="bottom" constant="60" id="5tU-1I-aat"/>
                             <constraint firstItem="igD-wB-oHc" firstAttribute="trailing" secondItem="kpH-U1-Eyk" secondAttribute="trailing" id="BSx-fV-Z2C"/>
+                            <constraint firstItem="omX-56-pfD" firstAttribute="top" secondItem="UbH-KR-fLa" secondAttribute="bottom" constant="43" id="EJD-z4-buJ"/>
+                            <constraint firstAttribute="trailing" secondItem="omX-56-pfD" secondAttribute="trailing" constant="32" id="Rxx-4s-R21"/>
                             <constraint firstItem="igD-wB-oHc" firstAttribute="leading" secondItem="kpH-U1-Eyk" secondAttribute="leading" id="fJe-IX-DGo"/>
+                            <constraint firstItem="UbH-KR-fLa" firstAttribute="centerX" secondItem="3Wo-sY-t7a" secondAttribute="centerX" id="jwN-Q3-oJY"/>
+                            <constraint firstItem="omX-56-pfD" firstAttribute="leading" secondItem="kpH-U1-Eyk" secondAttribute="leading" constant="32" id="lrL-tZ-kKQ"/>
                             <constraint firstItem="igD-wB-oHc" firstAttribute="top" secondItem="kpH-U1-Eyk" secondAttribute="top" id="nVQ-y0-lQh"/>
+                            <constraint firstItem="UbH-KR-fLa" firstAttribute="centerX" secondItem="kpH-U1-Eyk" secondAttribute="centerX" id="rHR-xB-sxl"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="kpH-U1-Eyk"/>
                     </view>
@@ -83,7 +135,7 @@
         <scene sceneID="6vC-dD-I1H">
             <objects>
                 <viewController id="jcf-H6-7C5" customClass="ChannelVC" customModule="Hotel_Concierge" customModuleProvider="target" sceneMemberID="viewController">
-                    <view key="view" contentMode="scaleToFill" id="vPp-Uh-6P1">
+                    <view key="view" contentMode="scaleToFill" id="vPp-Uh-6P1" customClass="GradientView" customModule="Hotel_Concierge" customModuleProvider="target">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
@@ -96,6 +148,7 @@
         </scene>
     </scenes>
     <resources>
+        <image name="Bg" width="650" height="110"/>
         <image name="Group" width="42" height="34"/>
     </resources>
 </document>
