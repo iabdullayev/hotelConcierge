@@ -1,0 +1,101 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="15505" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+    <device id="retina4_7" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="15510"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--Reveal View Controller-->
+        <scene sceneID="tne-QT-ifu">
+            <objects>
+                <viewController id="BYZ-38-t0r" customClass="SWRevealViewController" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
+                    </view>
+                    <connections>
+                        <segue destination="jcf-H6-7C5" kind="custom" identifier="sw_rear" customClass="SWRevealViewControllerSegueSetController" id="quo-cB-wXm"/>
+                        <segue destination="u7B-m4-inR" kind="custom" identifier="sw_front" customClass="SWRevealViewControllerSegueSetController" id="v6l-A5-Kxa"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="139" y="139"/>
+        </scene>
+        <!--ChatVC-->
+        <scene sceneID="vfA-yd-9De">
+            <objects>
+                <viewController id="u7B-m4-inR" customClass="ChatVC" customModule="Hotel_Concierge" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="3Wo-sY-t7a">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="igD-wB-oHc">
+                                <rect key="frame" x="0.0" y="0.0" width="375" height="77"/>
+                                <subviews>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="0q6-tZ-27l">
+                                        <rect key="frame" x="12" y="47" width="24" height="18"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" constant="24" id="VVx-nP-GVn"/>
+                                            <constraint firstAttribute="height" constant="18" id="Zzo-rn-gb3"/>
+                                        </constraints>
+                                        <fontDescription key="fontDescription" type="system" pointSize="10"/>
+                                        <state key="normal" image="Group"/>
+                                    </button>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Hotel Concierge" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Swf-GA-VHF">
+                                        <rect key="frame" x="111" y="44.5" width="153.5" height="23"/>
+                                        <fontDescription key="fontDescription" name="Helvetica-Bold" family="Helvetica" pointSize="20"/>
+                                        <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                </subviews>
+                                <color key="backgroundColor" red="0.97647058823529409" green="0.38823529411764707" blue="0.19607843137254902" alpha="1" colorSpace="calibratedRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="77" id="IMQ-aY-jF9"/>
+                                    <constraint firstAttribute="bottom" secondItem="0q6-tZ-27l" secondAttribute="bottom" constant="12" id="TQZ-9V-V5d"/>
+                                    <constraint firstItem="Swf-GA-VHF" firstAttribute="centerY" secondItem="0q6-tZ-27l" secondAttribute="centerY" id="VQz-rj-Ltw"/>
+                                    <constraint firstItem="Swf-GA-VHF" firstAttribute="centerX" secondItem="igD-wB-oHc" secondAttribute="centerX" id="eUZ-PS-yi5"/>
+                                    <constraint firstItem="0q6-tZ-27l" firstAttribute="leading" secondItem="igD-wB-oHc" secondAttribute="leading" constant="12" id="yq7-BL-m4o"/>
+                                </constraints>
+                            </view>
+                        </subviews>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <constraints>
+                            <constraint firstItem="igD-wB-oHc" firstAttribute="trailing" secondItem="kpH-U1-Eyk" secondAttribute="trailing" id="BSx-fV-Z2C"/>
+                            <constraint firstItem="igD-wB-oHc" firstAttribute="leading" secondItem="kpH-U1-Eyk" secondAttribute="leading" id="fJe-IX-DGo"/>
+                            <constraint firstItem="igD-wB-oHc" firstAttribute="top" secondItem="kpH-U1-Eyk" secondAttribute="top" id="nVQ-y0-lQh"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="kpH-U1-Eyk"/>
+                    </view>
+                    <connections>
+                        <outlet property="menuBtn" destination="0q6-tZ-27l" id="2Ud-6z-nGE"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="rLj-hD-adr" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1196" y="600.44977511244383"/>
+        </scene>
+        <!--ChannelVC-->
+        <scene sceneID="6vC-dD-I1H">
+            <objects>
+                <viewController id="jcf-H6-7C5" customClass="ChannelVC" customModule="Hotel_Concierge" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="vPp-Uh-6P1">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <viewLayoutGuide key="safeArea" id="8fx-Yf-UsP"/>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Tnb-5R-Zo7" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1201" y="-187"/>
+        </scene>
+    </scenes>
+    <resources>
+        <image name="Group" width="42" height="34"/>
+    </resources>
+</document>
