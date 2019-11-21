@@ -34,7 +34,7 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="igD-wB-oHc">
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="igD-wB-oHc" customClass="GradientView" customModule="Hotel_Concierge" customModuleProvider="target">
                                 <rect key="frame" x="0.0" y="0.0" width="375" height="77"/>
                                 <subviews>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="0q6-tZ-27l">
@@ -138,7 +138,40 @@
                     <view key="view" contentMode="scaleToFill" id="vPp-Uh-6P1" customClass="GradientView" customModule="Hotel_Concierge" customModuleProvider="target">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="top" spacing="38" translatesAutoresizingMaskIntoConstraints="NO" id="HQ4-lT-MAd">
+                                <rect key="frame" x="16" y="48" width="79" height="82"/>
+                                <subviews>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Settings" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="CcE-ex-eZz">
+                                        <rect key="frame" x="0.0" y="0.0" width="79" height="24"/>
+                                        <fontDescription key="fontDescription" name="HelveticaNeue-Bold" family="Helvetica Neue" pointSize="20"/>
+                                        <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Room #" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="5wN-QQ-GNN">
+                                        <rect key="frame" x="0.0" y="62" width="60" height="20"/>
+                                        <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="17"/>
+                                        <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                </subviews>
+                            </stackView>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="e75-sN-Kb6">
+                                <rect key="frame" x="16" y="577" width="200" height="70"/>
+                                <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="18"/>
+                                <state key="normal" title="Contact Reception" backgroundImage="BgWhite">
+                                    <color key="titleColor" red="0.97647058819999999" green="0.38823529410000002" blue="0.1960784314" alpha="0.84705882349999995" colorSpace="calibratedRGB"/>
+                                </state>
+                            </button>
+                        </subviews>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <constraints>
+                            <constraint firstItem="8fx-Yf-UsP" firstAttribute="bottom" secondItem="e75-sN-Kb6" secondAttribute="bottom" constant="20" id="2Ir-KB-d2n"/>
+                            <constraint firstItem="HQ4-lT-MAd" firstAttribute="leading" secondItem="8fx-Yf-UsP" secondAttribute="leading" constant="16" id="96U-NB-198"/>
+                            <constraint firstItem="HQ4-lT-MAd" firstAttribute="top" secondItem="8fx-Yf-UsP" secondAttribute="top" constant="48" id="Ga7-s5-yth"/>
+                            <constraint firstItem="8fx-Yf-UsP" firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="e75-sN-Kb6" secondAttribute="trailing" symbolic="YES" id="TpZ-Cm-LGA"/>
+                            <constraint firstItem="e75-sN-Kb6" firstAttribute="leading" secondItem="8fx-Yf-UsP" secondAttribute="leading" constant="16" id="yrr-eH-UpI"/>
+                        </constraints>
                         <viewLayoutGuide key="safeArea" id="8fx-Yf-UsP"/>
                     </view>
                 </viewController>
@@ -149,6 +182,7 @@
     </scenes>
     <resources>
         <image name="Bg" width="650" height="110"/>
+        <image name="BgWhite" width="200" height="70"/>
         <image name="Group" width="42" height="34"/>
     </resources>
 </document>
