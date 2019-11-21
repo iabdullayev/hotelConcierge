@@ -75,6 +75,9 @@
                                             <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                             <preferredSymbolConfiguration key="preferredSymbolConfiguration" scale="medium" weight="bold"/>
                                         </state>
+                                        <connections>
+                                            <action selector="roomService:" destination="u7B-m4-inR" eventType="touchUpInside" id="9DW-Cq-KXY"/>
+                                        </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="GzM-70-ACL">
                                         <rect key="frame" x="0.0" y="105" width="311" height="75"/>
@@ -125,11 +128,70 @@
                     </view>
                     <connections>
                         <outlet property="menuBtn" destination="0q6-tZ-27l" id="2Ud-6z-nGE"/>
+                        <outlet property="roomServiceOutlet" destination="pmc-67-Yyd" id="ldU-ov-lTH"/>
+                        <segue destination="ky9-nz-w0S" kind="show" identifier="toRoomService" id="QSQ-uB-s46"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="rLj-hD-adr" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="1196" y="600.44977511244383"/>
+        </scene>
+        <!--RoomVC-->
+        <scene sceneID="DY9-jo-W9A">
+            <objects>
+                <viewController id="ky9-nz-w0S" customClass="RoomVC" customModule="Hotel_Concierge" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="rQu-YH-n0f">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="647"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="VhR-Fp-MAb" customClass="GradientView" customModule="Hotel_Concierge" customModuleProvider="target">
+                                <rect key="frame" x="0.0" y="0.0" width="375" height="77"/>
+                                <subviews>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Room Service" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="4v3-Ba-FQo">
+                                        <rect key="frame" x="121" y="45" width="135" height="24"/>
+                                        <fontDescription key="fontDescription" name="HelveticaNeue-Bold" family="Helvetica Neue" pointSize="20"/>
+                                        <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="41b-n3-H2g">
+                                        <rect key="frame" x="24" y="46.5" width="16" height="21"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="21" id="tvJ-5c-qrr"/>
+                                            <constraint firstAttribute="width" constant="16" id="y8o-pT-hNl"/>
+                                        </constraints>
+                                        <state key="normal" backgroundImage="Back">
+                                            <color key="titleShadowColor" red="0.97647058819999999" green="0.38823529410000002" blue="0.1960784314" alpha="1" colorSpace="calibratedRGB"/>
+                                        </state>
+                                        <connections>
+                                            <action selector="backBtn:" destination="ky9-nz-w0S" eventType="touchUpInside" id="OPI-Qk-3Gh"/>
+                                        </connections>
+                                    </button>
+                                </subviews>
+                                <color key="backgroundColor" red="0.97647058819999999" green="0.38823529410000002" blue="0.1960784314" alpha="1" colorSpace="calibratedRGB"/>
+                                <constraints>
+                                    <constraint firstItem="4v3-Ba-FQo" firstAttribute="leading" secondItem="41b-n3-H2g" secondAttribute="trailing" constant="81" id="BXW-WP-pdv"/>
+                                    <constraint firstItem="4v3-Ba-FQo" firstAttribute="leading" secondItem="VhR-Fp-MAb" secondAttribute="leading" constant="121" id="LYz-Kt-17V"/>
+                                    <constraint firstItem="41b-n3-H2g" firstAttribute="leading" secondItem="VhR-Fp-MAb" secondAttribute="leading" constant="24" id="Nub-Ql-eX8"/>
+                                    <constraint firstItem="4v3-Ba-FQo" firstAttribute="centerY" secondItem="41b-n3-H2g" secondAttribute="centerY" id="S2p-0h-5GW"/>
+                                    <constraint firstItem="4v3-Ba-FQo" firstAttribute="centerX" secondItem="VhR-Fp-MAb" secondAttribute="centerX" constant="1" id="Yhf-Rx-m11"/>
+                                    <constraint firstItem="4v3-Ba-FQo" firstAttribute="bottom" secondItem="VhR-Fp-MAb" secondAttribute="bottomMargin" id="cMa-Ch-yxF"/>
+                                </constraints>
+                            </view>
+                        </subviews>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <constraints>
+                            <constraint firstItem="ob7-yx-BsN" firstAttribute="bottom" secondItem="VhR-Fp-MAb" secondAttribute="bottom" constant="570" id="9m6-I9-n6W"/>
+                            <constraint firstItem="VhR-Fp-MAb" firstAttribute="centerX" secondItem="rQu-YH-n0f" secondAttribute="centerX" id="RBh-oP-Ecc"/>
+                            <constraint firstItem="VhR-Fp-MAb" firstAttribute="leading" secondItem="ob7-yx-BsN" secondAttribute="leading" id="YG1-eI-qMU"/>
+                            <constraint firstItem="VhR-Fp-MAb" firstAttribute="top" secondItem="ob7-yx-BsN" secondAttribute="top" id="bee-c8-e6x"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="ob7-yx-BsN"/>
+                    </view>
+                    <navigationItem key="navigationItem" id="9Xs-ea-X5Y"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="ODa-fm-AOJ" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2244" y="599.55022488755628"/>
         </scene>
         <!--ChannelVC-->
         <scene sceneID="6vC-dD-I1H">
@@ -181,6 +243,7 @@
         </scene>
     </scenes>
     <resources>
+        <image name="Back" width="23" height="41"/>
         <image name="Bg" width="650" height="110"/>
         <image name="BgWhite" width="200" height="70"/>
         <image name="Group" width="42" height="34"/>

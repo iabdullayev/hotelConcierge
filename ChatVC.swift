@@ -11,7 +11,10 @@ import UIKit
 class ChatVC: UIViewController {
 
     //Outlets
+    
     @IBOutlet weak var menuBtn: UIButton!
+    
+    @IBOutlet weak var roomServiceOutlet: UIButton!
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -23,4 +26,7 @@ class ChatVC: UIViewController {
         
     }
     
+    @IBAction func roomService(_ sender: Any) {
+        performSegue(withIdentifier: TO_ROOM_SERVICE, sender: nil)
+    }
 }

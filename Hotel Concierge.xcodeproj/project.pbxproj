@@ -11,6 +11,8 @@
 		5A891B772385536900BABCF0 /* ChatVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A891B762385536900BABCF0 /* ChatVC.swift */; };
 		5A891B792385537B00BABCF0 /* ChannelVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A891B782385537B00BABCF0 /* ChannelVC.swift */; };
 		5A891B7B2385B8E200BABCF0 /* GradientView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A891B7A2385B8E200BABCF0 /* GradientView.swift */; };
+		5A891B7E238677FF00BABCF0 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A891B7D238677FF00BABCF0 /* Constants.swift */; };
+		5A891B8223868B1100BABCF0 /* RoomVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A891B8123868B1100BABCF0 /* RoomVC.swift */; };
 		5AB8C72E2384784100E9E356 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5AB8C72D2384784100E9E356 /* AppDelegate.swift */; };
 		5AB8C7302384784100E9E356 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5AB8C72F2384784100E9E356 /* SceneDelegate.swift */; };
 		5AB8C7352384784100E9E356 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 5AB8C7332384784100E9E356 /* Main.storyboard */; };
@@ -28,6 +30,8 @@
 		5A891B762385536900BABCF0 /* ChatVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChatVC.swift; sourceTree = SOURCE_ROOT; };
 		5A891B782385537B00BABCF0 /* ChannelVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = ChannelVC.swift; path = "Hotel Concierge/ChannelVC.swift"; sourceTree = SOURCE_ROOT; };
 		5A891B7A2385B8E200BABCF0 /* GradientView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GradientView.swift; sourceTree = "<group>"; };
+		5A891B7D238677FF00BABCF0 /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
+		5A891B8123868B1100BABCF0 /* RoomVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RoomVC.swift; sourceTree = "<group>"; };
 		5AB8C72A2384784100E9E356 /* Hotel Concierge.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Hotel Concierge.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		5AB8C72D2384784100E9E356 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		5AB8C72F2384784100E9E356 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -82,6 +86,7 @@
 			children = (
 				5A891B762385536900BABCF0 /* ChatVC.swift */,
 				5A891B782385537B00BABCF0 /* ChannelVC.swift */,
+				5A891B8123868B1100BABCF0 /* RoomVC.swift */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -99,6 +104,14 @@
 			children = (
 			);
 			path = Model;
+			sourceTree = "<group>";
+		};
+		5A891B7C238677EA00BABCF0 /* Utilities */ = {
+			isa = PBXGroup;
+			children = (
+				5A891B7D238677FF00BABCF0 /* Constants.swift */,
+			);
+			path = Utilities;
 			sourceTree = "<group>";
 		};
 		5AB8C7212384784000E9E356 = {
@@ -122,6 +135,7 @@
 		5AB8C72C2384784100E9E356 /* Hotel Concierge */ = {
 			isa = PBXGroup;
 			children = (
+				5A891B7C238677EA00BABCF0 /* Utilities */,
 				5A891B752385534700BABCF0 /* Model */,
 				5A891B74238551F100BABCF0 /* View */,
 				5A891B73238551E700BABCF0 /* Controller */,
@@ -256,6 +270,8 @@
 				5AB8C72E2384784100E9E356 /* AppDelegate.swift in Sources */,
 				5A891B7B2385B8E200BABCF0 /* GradientView.swift in Sources */,
 				5AB8C7302384784100E9E356 /* SceneDelegate.swift in Sources */,
+				5A891B7E238677FF00BABCF0 /* Constants.swift in Sources */,
+				5A891B8223868B1100BABCF0 /* RoomVC.swift in Sources */,
 				5A891B7223854F1500BABCF0 /* SWRevealViewController.m in Sources */,
 				5A891B792385537B00BABCF0 /* ChannelVC.swift in Sources */,
 			);
