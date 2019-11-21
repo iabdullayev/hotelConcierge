@@ -89,6 +89,9 @@
                                             <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                             <preferredSymbolConfiguration key="preferredSymbolConfiguration" scale="medium" weight="bold"/>
                                         </state>
+                                        <connections>
+                                            <action selector="houseKeeping:" destination="u7B-m4-inR" eventType="touchUpInside" id="Ycd-0h-3GH"/>
+                                        </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="jlv-S5-d0K">
                                         <rect key="frame" x="0.0" y="210" width="311" height="75"/>
@@ -127,9 +130,11 @@
                         <viewLayoutGuide key="safeArea" id="kpH-U1-Eyk"/>
                     </view>
                     <connections>
+                        <outlet property="houseKeepingOutlet" destination="GzM-70-ACL" id="rAT-b6-WOK"/>
                         <outlet property="menuBtn" destination="0q6-tZ-27l" id="2Ud-6z-nGE"/>
                         <outlet property="roomServiceOutlet" destination="pmc-67-Yyd" id="ldU-ov-lTH"/>
                         <segue destination="ky9-nz-w0S" kind="show" identifier="toRoomService" id="QSQ-uB-s46"/>
+                        <segue destination="8GM-4C-2e9" kind="show" identifier="toHouseKeep" id="nxW-ev-t23"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="rLj-hD-adr" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
@@ -145,10 +150,10 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="VhR-Fp-MAb" customClass="GradientView" customModule="Hotel_Concierge" customModuleProvider="target">
-                                <rect key="frame" x="0.0" y="0.0" width="375" height="77"/>
+                                <rect key="frame" x="0.0" y="0.0" width="373.5" height="77"/>
                                 <subviews>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Room Service" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="4v3-Ba-FQo">
-                                        <rect key="frame" x="121" y="45" width="135" height="24"/>
+                                        <rect key="frame" x="121" y="45" width="133.5" height="24"/>
                                         <fontDescription key="fontDescription" name="HelveticaNeue-Bold" family="Helvetica Neue" pointSize="20"/>
                                         <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <nil key="highlightedColor"/>
@@ -177,13 +182,94 @@
                                     <constraint firstItem="4v3-Ba-FQo" firstAttribute="bottom" secondItem="VhR-Fp-MAb" secondAttribute="bottomMargin" id="cMa-Ch-yxF"/>
                                 </constraints>
                             </view>
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="16" translatesAutoresizingMaskIntoConstraints="NO" id="Q1f-UL-Mgm">
+                                <rect key="frame" x="32" y="141" width="310" height="314"/>
+                                <subviews>
+                                    <button opaque="NO" contentMode="scaleToFill" verticalCompressionResistancePriority="749" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="JFT-aq-ack">
+                                        <rect key="frame" x="0.0" y="0.0" width="310" height="50"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="50" id="DLV-vc-8bS"/>
+                                        </constraints>
+                                        <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="25"/>
+                                        <state key="normal" title="Breakfast 07:00 - 11:00" backgroundImage="Bg">
+                                            <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                            <preferredSymbolConfiguration key="preferredSymbolConfiguration" scale="medium" weight="bold"/>
+                                        </state>
+                                        <connections>
+                                            <action selector="roomService:" destination="u7B-m4-inR" eventType="touchUpInside" id="X1C-q2-aYy"/>
+                                        </connections>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" verticalCompressionResistancePriority="749" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="HYl-Vh-l1Z">
+                                        <rect key="frame" x="0.0" y="66" width="310" height="50"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="50" id="Gfn-Xf-oCr"/>
+                                        </constraints>
+                                        <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="25"/>
+                                        <state key="normal" title="Lunch 12:00 - 17:00" backgroundImage="Bg">
+                                            <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                            <preferredSymbolConfiguration key="preferredSymbolConfiguration" scale="medium" weight="bold"/>
+                                        </state>
+                                        <connections>
+                                            <action selector="roomService:" destination="u7B-m4-inR" eventType="touchUpInside" id="ecF-DA-7Nr"/>
+                                        </connections>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" verticalCompressionResistancePriority="749" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Vjf-T2-6wG">
+                                        <rect key="frame" x="0.0" y="132" width="310" height="50"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="50" id="1rz-Ac-nMv"/>
+                                        </constraints>
+                                        <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="25"/>
+                                        <state key="normal" title="Dinner 18:00 - 22:00" backgroundImage="Bg">
+                                            <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                            <preferredSymbolConfiguration key="preferredSymbolConfiguration" scale="medium" weight="bold"/>
+                                        </state>
+                                        <connections>
+                                            <action selector="roomService:" destination="u7B-m4-inR" eventType="touchUpInside" id="FEL-ZP-O1r"/>
+                                        </connections>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" verticalCompressionResistancePriority="749" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="3gE-Vi-jD1">
+                                        <rect key="frame" x="0.0" y="198" width="310" height="50"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="50" id="IYn-0v-sQq"/>
+                                        </constraints>
+                                        <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="25"/>
+                                        <state key="normal" title="Snacks" backgroundImage="Bg">
+                                            <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                            <preferredSymbolConfiguration key="preferredSymbolConfiguration" scale="medium" weight="bold"/>
+                                        </state>
+                                        <connections>
+                                            <action selector="roomService:" destination="u7B-m4-inR" eventType="touchUpInside" id="FJe-s9-qoQ"/>
+                                        </connections>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" verticalCompressionResistancePriority="749" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="i2g-qT-fRe">
+                                        <rect key="frame" x="0.0" y="264" width="310" height="50"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="50" id="2Jl-Tl-7YY"/>
+                                        </constraints>
+                                        <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="25"/>
+                                        <state key="normal" title="Drinks" backgroundImage="Bg">
+                                            <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                            <preferredSymbolConfiguration key="preferredSymbolConfiguration" scale="medium" weight="bold"/>
+                                        </state>
+                                        <connections>
+                                            <action selector="roomService:" destination="u7B-m4-inR" eventType="touchUpInside" id="5V1-YQ-yGd"/>
+                                        </connections>
+                                    </button>
+                                </subviews>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="310" id="iJN-CA-o4r"/>
+                                </constraints>
+                            </stackView>
                         </subviews>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                         <constraints>
+                            <constraint firstItem="Q1f-UL-Mgm" firstAttribute="top" secondItem="VhR-Fp-MAb" secondAttribute="bottom" constant="64" id="2Fs-Wl-qpp"/>
+                            <constraint firstItem="Q1f-UL-Mgm" firstAttribute="leading" secondItem="ob7-yx-BsN" secondAttribute="leading" constant="32" id="3aB-bL-9TM"/>
                             <constraint firstItem="ob7-yx-BsN" firstAttribute="bottom" secondItem="VhR-Fp-MAb" secondAttribute="bottom" constant="570" id="9m6-I9-n6W"/>
                             <constraint firstItem="VhR-Fp-MAb" firstAttribute="centerX" secondItem="rQu-YH-n0f" secondAttribute="centerX" id="RBh-oP-Ecc"/>
                             <constraint firstItem="VhR-Fp-MAb" firstAttribute="leading" secondItem="ob7-yx-BsN" secondAttribute="leading" id="YG1-eI-qMU"/>
                             <constraint firstItem="VhR-Fp-MAb" firstAttribute="top" secondItem="ob7-yx-BsN" secondAttribute="top" id="bee-c8-e6x"/>
+                            <constraint firstAttribute="trailing" secondItem="Q1f-UL-Mgm" secondAttribute="trailing" constant="32" id="rYb-n9-qYQ"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="ob7-yx-BsN"/>
                     </view>
@@ -192,6 +278,129 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="ODa-fm-AOJ" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="2244" y="599.55022488755628"/>
+        </scene>
+        <!--House KeepVC-->
+        <scene sceneID="4sR-l7-JiN">
+            <objects>
+                <viewController id="8GM-4C-2e9" customClass="HouseKeepVC" customModule="Hotel_Concierge" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="Jnc-I5-PjR">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="647"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="61S-52-GvN" customClass="GradientView" customModule="Hotel_Concierge" customModuleProvider="target">
+                                <rect key="frame" x="-5.5" y="0.0" width="386" height="77"/>
+                                <subviews>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="House Keeping" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="odw-NR-A6M">
+                                        <rect key="frame" x="121" y="45" width="146" height="24"/>
+                                        <fontDescription key="fontDescription" name="HelveticaNeue-Bold" family="Helvetica Neue" pointSize="20"/>
+                                        <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="aEe-ZU-dVJ">
+                                        <rect key="frame" x="24" y="46.5" width="16" height="21"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" constant="16" id="9PN-qc-1XH"/>
+                                            <constraint firstAttribute="height" constant="21" id="DeL-fx-c62"/>
+                                        </constraints>
+                                        <state key="normal" backgroundImage="Back">
+                                            <color key="titleShadowColor" red="0.97647058819999999" green="0.38823529410000002" blue="0.1960784314" alpha="1" colorSpace="calibratedRGB"/>
+                                        </state>
+                                        <connections>
+                                            <action selector="backBtn:" destination="ky9-nz-w0S" eventType="touchUpInside" id="erF-5E-M4c"/>
+                                            <action selector="backBtn:" destination="8GM-4C-2e9" eventType="touchUpInside" id="ui4-36-cfD"/>
+                                        </connections>
+                                    </button>
+                                </subviews>
+                                <color key="backgroundColor" red="0.97647058819999999" green="0.38823529410000002" blue="0.1960784314" alpha="1" colorSpace="calibratedRGB"/>
+                                <constraints>
+                                    <constraint firstItem="odw-NR-A6M" firstAttribute="centerX" secondItem="61S-52-GvN" secondAttribute="centerX" constant="1" id="5YJ-Qq-PtH"/>
+                                    <constraint firstItem="odw-NR-A6M" firstAttribute="leading" secondItem="61S-52-GvN" secondAttribute="leading" constant="121" id="Ek1-4I-AXS"/>
+                                    <constraint firstItem="odw-NR-A6M" firstAttribute="bottom" secondItem="61S-52-GvN" secondAttribute="bottomMargin" id="W21-xU-KHv"/>
+                                    <constraint firstItem="aEe-ZU-dVJ" firstAttribute="leading" secondItem="61S-52-GvN" secondAttribute="leading" constant="24" id="XBQ-5H-fIM"/>
+                                    <constraint firstItem="odw-NR-A6M" firstAttribute="leading" secondItem="aEe-ZU-dVJ" secondAttribute="trailing" constant="81" id="dl4-Ci-UUf"/>
+                                    <constraint firstItem="odw-NR-A6M" firstAttribute="centerY" secondItem="aEe-ZU-dVJ" secondAttribute="centerY" id="h9Z-zI-UeF"/>
+                                </constraints>
+                            </view>
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="16" translatesAutoresizingMaskIntoConstraints="NO" id="WEi-NJ-zyc">
+                                <rect key="frame" x="32" y="141" width="311" height="248"/>
+                                <subviews>
+                                    <button opaque="NO" contentMode="scaleToFill" verticalCompressionResistancePriority="749" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="hIJ-Aj-hlh">
+                                        <rect key="frame" x="0.0" y="0.0" width="311" height="50"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="50" id="wcH-RY-NWf"/>
+                                        </constraints>
+                                        <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="25"/>
+                                        <state key="normal" title="Request Pillows" backgroundImage="Bg">
+                                            <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                            <preferredSymbolConfiguration key="preferredSymbolConfiguration" scale="medium" weight="bold"/>
+                                        </state>
+                                        <connections>
+                                            <action selector="roomService:" destination="u7B-m4-inR" eventType="touchUpInside" id="YtQ-1b-jIT"/>
+                                        </connections>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" verticalCompressionResistancePriority="749" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="zKW-gx-mFl">
+                                        <rect key="frame" x="0.0" y="66" width="311" height="50"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="50" id="KTg-bE-ziJ"/>
+                                        </constraints>
+                                        <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="25"/>
+                                        <state key="normal" title="Request Towels" backgroundImage="Bg">
+                                            <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                            <preferredSymbolConfiguration key="preferredSymbolConfiguration" scale="medium" weight="bold"/>
+                                        </state>
+                                        <connections>
+                                            <action selector="roomService:" destination="u7B-m4-inR" eventType="touchUpInside" id="Ory-ge-nOC"/>
+                                        </connections>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" verticalCompressionResistancePriority="749" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Wpf-EG-q8s">
+                                        <rect key="frame" x="0.0" y="132" width="311" height="50"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="50" id="e53-Fm-4dC"/>
+                                        </constraints>
+                                        <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="25"/>
+                                        <state key="normal" title="Room Cleaning" backgroundImage="Bg">
+                                            <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                            <preferredSymbolConfiguration key="preferredSymbolConfiguration" scale="medium" weight="bold"/>
+                                        </state>
+                                        <connections>
+                                            <action selector="roomService:" destination="u7B-m4-inR" eventType="touchUpInside" id="DXT-VY-U3O"/>
+                                        </connections>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" verticalCompressionResistancePriority="749" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="OMp-3w-sfN">
+                                        <rect key="frame" x="0.0" y="198" width="311" height="50"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="50" id="of1-wt-R4s"/>
+                                        </constraints>
+                                        <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="25"/>
+                                        <state key="normal" title="Laundry Cleaning" backgroundImage="Bg">
+                                            <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                            <preferredSymbolConfiguration key="preferredSymbolConfiguration" scale="medium" weight="bold"/>
+                                        </state>
+                                        <connections>
+                                            <action selector="roomService:" destination="u7B-m4-inR" eventType="touchUpInside" id="TNf-6j-0gT"/>
+                                        </connections>
+                                    </button>
+                                </subviews>
+                            </stackView>
+                        </subviews>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <constraints>
+                            <constraint firstItem="WEi-NJ-zyc" firstAttribute="top" secondItem="61S-52-GvN" secondAttribute="bottom" constant="64" id="Bz6-W6-h7M"/>
+                            <constraint firstItem="61S-52-GvN" firstAttribute="centerX" secondItem="Jnc-I5-PjR" secondAttribute="centerX" id="EJj-7N-i2f"/>
+                            <constraint firstItem="WEi-NJ-zyc" firstAttribute="leading" secondItem="8rR-2S-OZC" secondAttribute="leading" constant="32" id="EfE-jN-S3O"/>
+                            <constraint firstAttribute="bottom" secondItem="61S-52-GvN" secondAttribute="bottom" constant="570" id="FHR-xz-3lh"/>
+                            <constraint firstItem="WEi-NJ-zyc" firstAttribute="centerX" secondItem="Jnc-I5-PjR" secondAttribute="centerX" id="HYO-tf-7BO"/>
+                            <constraint firstItem="WEi-NJ-zyc" firstAttribute="top" secondItem="61S-52-GvN" secondAttribute="bottom" constant="64" id="evr-ey-Pvp"/>
+                            <constraint firstAttribute="trailing" secondItem="WEi-NJ-zyc" secondAttribute="trailing" constant="32" id="sCx-vn-rA1"/>
+                            <constraint firstItem="61S-52-GvN" firstAttribute="top" secondItem="8rR-2S-OZC" secondAttribute="top" id="sw4-6S-uN7"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="8rR-2S-OZC"/>
+                    </view>
+                    <navigationItem key="navigationItem" id="dzr-rS-szh"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="zA3-je-kAh" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1716" y="1371"/>
         </scene>
         <!--ChannelVC-->
         <scene sceneID="6vC-dD-I1H">

@@ -11,3 +11,4 @@ import Foundation
 //Segues
 
 let TO_ROOM_SERVICE = "toRoomService"
+let TO_HOUSE_KEEPING  = "toHouseKeep"

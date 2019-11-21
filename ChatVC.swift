@@ -13,8 +13,8 @@ class ChatVC: UIViewController {
     //Outlets
     
     @IBOutlet weak var menuBtn: UIButton!
-    
     @IBOutlet weak var roomServiceOutlet: UIButton!
+    @IBOutlet weak var houseKeepingOutlet: UIButton!
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -29,4 +29,9 @@ class ChatVC: UIViewController {
     @IBAction func roomService(_ sender: Any) {
         performSegue(withIdentifier: TO_ROOM_SERVICE, sender: nil)
     }
+    
+    @IBAction func houseKeeping(_ sender: Any) {
+        performSegue(withIdentifier: TO_HOUSE_KEEPING, sender: nil)
+    }
+    
 }
